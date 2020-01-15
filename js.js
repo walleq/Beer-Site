@@ -4,19 +4,6 @@ const delay = ms => {
 
 const url = 'https://api.punkapi.com/v2/beers'
 
-//function fetchTodos() {
-// console.log('Fetch todo started ...')
-// return delay(2000)
-//  .then(() => fetch(url)
-//)
-// .then(responce => responce.json()) 
-//}
-//fetchTodos()
-// .then(data => {
-//      console.log('Data', data)
-//})
-//.catch(e => console.log(e))//
-
 async function fetchAsyncTodos() {
     console.log('Fetch todo started ...')
     try {
@@ -29,4 +16,9 @@ async function fetchAsyncTodos() {
     }
 }
 
-fetchAsyncTodos()
+fetchAsyncTodos() 
+
+/* // 1) вытягивать все пиво
+2) по отдельности
+3) разделить по страницам
+4) кэширование */
