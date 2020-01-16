@@ -2,30 +2,11 @@ let table = document.querySelector('table');
 const baseURL = 'https://api.punkapi.com/v2/beers'
 let beer = [];
 const columnNames = ['id', 'name', 'tagline', 'first brewed', 'description'];
-
-function generateTableHead(table, data) {
-    let thead = table.createTHead();
-    let row = thead.insertRow();
-    for (let key of data) {
-        let th = document.createElement("th");
-        let text = document.createTextNode(key);
-        th.appendChild(text);
-        row.appendChild(th);
-    }
-}
-function generateTable(table, data) {
-    for (let element of data) {
-        let row = table.insertRow();
-        for (key in element) {
-            let cell = row.insertCell();
-            let text = document.createTextNode(element[key]);
-            cell.appendChild(text);
-        }
-    }
-}
+const buttonWrapper = document.getElementById('button-wrapper');
+const buttonSingle = document.getElementsByClassName('btn');
+let currentButton;
 
 async function getBeer(params) {
-    console.log('Fetch todo started ...')
     try {
         const url = new URL(baseURL)
         const queryParams = { page: params.page, per_page: 5 }
@@ -37,13 +18,23 @@ async function getBeer(params) {
         beer = data.map(({ id, name, tagline, first_brewed, description }) => ({ id, name, tagline, first_brewed, description }))
         generateTableHead(table, columnNames);
         generateTable(table, beer);
-        console.log('Data', beer)
+
     } catch (e) {
         console.error(e)
     }
 }
-
-getBeer({ page: 2 });
+function setActivePage(event) {
+    const newClass = 'btn';
+    if (currentButton) {
+        currentButton.classList.remove(newClass);
+    }
+    if (event.target.innerHTML) {
+        currentButton = event.target;
+    } else {
+        return;
+    };
+    currentButton.classList.add(newClass);
+}
 
 async function getSingleBeer(id) {
     try {
@@ -54,9 +45,10 @@ async function getSingleBeer(id) {
         console.error(e)
     }
 }
-getSingleBeer(1);
-
-/* // 1) вытягивать все пиво
-2) по отдельности
-3) разделить по страницам 5
-4) кэширование */
+buttonWrapper.addEventListener('click', function (event) {
+    setActivePage(event);
+    getBeer({ page: event.target.innerHTML })
+})
+/* Создать объект элемента пиво(класс)
+Визуализировать в каталог с картинками и прочим, оформление
+Чекбоксы (корзина)на каждом пиве и при выделении иконки корзины должны отобразиться элементы которые я уже выбрал */

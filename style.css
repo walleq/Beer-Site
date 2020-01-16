@@ -1,0 +1,16 @@
+.btn-group button {
+    background-color: #4CAF50; 
+    border: 1px solid green; 
+    color: white;  
+    cursor: pointer;
+    float: left;
+    width:20%;
+}
+.btn-group .btn {
+    color: black;
+    background-color: white;
+ } 
+  
+  .btn-group button:hover {
+    background-color: #255227;
+  }
