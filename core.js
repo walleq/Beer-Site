@@ -1,4 +1,4 @@
-let table = document.querySelector('table');
+const table = document.querySelector('table');
 const baseURL = 'https://api.punkapi.com/v2/beers'
 let beer = [];
 const columnNames = ['id', 'name', 'tagline', 'first brewed', 'description'];
@@ -24,7 +24,7 @@ async function getBeer(params) {
     }
 }
 function setActivePage(event) {
-    const newClass = 'btn';
+    const newClass = 'mybtn';
     if (currentButton) {
         currentButton.classList.remove(newClass);
     }
@@ -48,6 +48,7 @@ async function getSingleBeer(id) {
 buttonWrapper.addEventListener('click', function (event) {
     setActivePage(event);
     getBeer({ page: event.target.innerHTML })
+    parseBeer();
 })
 
 

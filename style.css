@@ -4,9 +4,9 @@
     color: white;  
     cursor: pointer;
     float: left;
-    width:20%;
+    width:6%;
 }
-.btn-group .btn {
+.btn-group .mybtn {
     color: black;
     background-color: white;
  } 

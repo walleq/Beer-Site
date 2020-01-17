@@ -1,19 +1,22 @@
 class Beer {
-    constructor(opt) {
-        this.name = opt.name;
-        this.tagline = opt.tagline;
-        this.first_brewed = opt.first_brewed;
-        this.description = opt.description;
+    constructor({ name, tagline, first_brewed, description }) {
+        this.name = name;
+        this.tagline = tagline;
+        this.first_brewed = first_brewed;
+        this.description = description;
     }
 }
 
-async function getBeer() {
+async function parseBeer() {
     try {
         const responce = await fetch(baseURL)
         const data = await responce.json()
-        beer = data.map(({ name, tagline, first_brewed, description }) => ({ name:name, tagline:tagline, first_brewed:first_brewed, description:description }))
+        beer = data.map((opt) => new Beer(opt))
         console.log(beer);
     } catch (e) {
         console.error(e)
     }
 }
+
+/* пробежаться по массиву и построить дом
+25 div */
