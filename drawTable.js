@@ -13,7 +13,12 @@ function generateTable(table, data) {
     for (let element of data) {
         const row = table.insertRow();
         const boxCell = row.insertCell();
-        boxCell.appendChild(createCheckBox());
+        const checkBoxBeer = createCheckBox(element.id);
+        if (selectedCheckBox.get(element.id.toString())) {
+            checkBoxBeer.checked = true;
+        }
+
+        boxCell.appendChild(checkBoxBeer);
         for (key in element) {
             const cell = row.insertCell();
             let childElement;
