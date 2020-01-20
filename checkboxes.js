@@ -8,8 +8,6 @@ function createCheckBox(idBeer) {
     return checkBox;
 }
 
-
-
 table.addEventListener('change', function (event) {
     const currentCheckBox = event.target;
     const idBeer = currentCheckBox.getAttribute('idBeer');
@@ -19,6 +17,7 @@ table.addEventListener('change', function (event) {
 
     currentCheckBox.checked ? selectedCheckBox.set(idBeer, beer) : selectedCheckBox.delete(idBeer);
 });
+
 
 
 
