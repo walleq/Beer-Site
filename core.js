@@ -1,7 +1,7 @@
 const table = document.querySelector('table');
 const baseURL = 'https://api.punkapi.com/v2/beers'
 let beers = [];
-const columnNames = ['', 'id', 'name', 'tagline', 'first brewed', 'description', 'image'];
+const columnNames = ['', 'Id', 'Name', 'Tagline', 'First brewed', 'Description', 'Image'];
 const buttonWrapper = document.getElementById('button-wrapper');
 const buttonSingle = document.getElementsByClassName('btn');
 let currentButton;
@@ -48,7 +48,6 @@ async function getSingleBeer(id) {
 buttonWrapper.addEventListener('click', function (event) {
     setActivePage(event);
     getBeer({ page: event.target.innerHTML })
-    parseBeer();
 })
 
 

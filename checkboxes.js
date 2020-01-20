@@ -1,3 +1,5 @@
+let selectedCheckBox = new Map();
+const checkBoxCall = document.getElementById('checkbox');
 function is_checked() {
     const check1 = document.getElementById('1').checked;
     const check2 = document.getElementById('2').checked;
@@ -14,7 +16,21 @@ function is_checked() {
 
 }
 function createCheckBox() {
-    const checkbox = document.createElement('input');
-    checkbox.setAttribute('type', 'checkbox');
-    return checkbox; 
+    const checkBox = document.createElement('input');
+    checkBox.setAttribute('type', 'checkbox');
+    return checkBox;
 }
+
+
+table.addEventListener('change', function (event) {
+    if (event.target.checked) {
+        selectedCheckBox.set(event.target.parentNode.parentNode.querySelectorAll('td')[1].innerText, event.target.parentNode.parentNode.querySelectorAll('td')[2].innerText)
+    } else {
+        selectedCheckBox.delete(event.target.parentNode.parentNode.querySelectorAll('td')[1].innerText)
+    }
+    console.log(selectedCheckBox.values())
+})
+
+
+
+

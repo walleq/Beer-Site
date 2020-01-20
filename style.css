@@ -20,5 +20,11 @@
  
  th {
    font-size: 20px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
  }
+ 
+ td {
+   font-size: medium;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
   

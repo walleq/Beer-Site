@@ -7,22 +7,20 @@ class Beer {
         this.description = description;
         this.image_url = image_url;
     }
-}
+};
+
 
 /* class HttpModule {
     constructor(baseURL)
-} */
-
-async function parseBeer() {
-    try {
+    async parseBeer() {
+      try {
         const responce = await fetch(baseURL)
         const data = await responce.json()
         beer = data.map((opt) => new Beer(opt))
         console.log(beer);
-    } catch (e) {
+      } catch (e) {
         console.error(e)
+      }
     }
-}
-
-/* пробежаться по массиву и построить дом
-25 div */
+  }
+ */
