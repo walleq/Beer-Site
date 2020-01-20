@@ -12,10 +12,19 @@ function generateTableHead(table, data) {
 function generateTable(table, data) {
     for (let element of data) {
         const row = table.insertRow();
+        const boxCell = row.insertCell();
+        boxCell.appendChild(createCheckBox());
         for (key in element) {
             const cell = row.insertCell();
-            const text = document.createTextNode(element[key]);
-            cell.appendChild(text);
+            let childElement;
+            if (key === 'image_url') {
+                childElement = document.createElement('img');
+                childElement.setAttribute('src', element[key]);
+                childElement.classList.add('beer')
+            } else {
+                childElement = document.createTextNode(element[key]);
+            }
+            cell.appendChild(childElement);
         }
     }
 }

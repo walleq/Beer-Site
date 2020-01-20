@@ -1,7 +1,7 @@
 const table = document.querySelector('table');
 const baseURL = 'https://api.punkapi.com/v2/beers'
-let beer = [];
-const columnNames = ['id', 'name', 'tagline', 'first brewed', 'description'];
+let beers = [];
+const columnNames = ['', 'id', 'name', 'tagline', 'first brewed', 'description', 'image'];
 const buttonWrapper = document.getElementById('button-wrapper');
 const buttonSingle = document.getElementsByClassName('btn');
 let currentButton;
@@ -15,9 +15,9 @@ async function getBeer(params) {
 
         const responce = await fetch(url)
         const data = await responce.json()
-        beer = data.map(({ id, name, tagline, first_brewed, description }) => ({ id, name, tagline, first_brewed, description }))
+        beers = data.map(beerData => new Beer(beerData));
         generateTableHead(table, columnNames);
-        generateTable(table, beer);
+        generateTable(table, beers);
 
     } catch (e) {
         console.error(e)

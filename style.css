@@ -14,3 +14,11 @@
   .btn-group button:hover {
     background-color: #255227;
   }
+ .beer {
+   width: 50px;
+ }
+ 
+ th {
+   font-size: 20px;
+ }
+  

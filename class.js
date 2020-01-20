@@ -1,11 +1,17 @@
 class Beer {
-    constructor({ name, tagline, first_brewed, description }) {
+    constructor({ id, name, tagline, first_brewed, description, image_url }) {
+        this.id = id;
         this.name = name;
         this.tagline = tagline;
         this.first_brewed = first_brewed;
         this.description = description;
+        this.image_url = image_url;
     }
 }
+
+/* class HttpModule {
+    constructor(baseURL)
+} */
 
 async function parseBeer() {
     try {
