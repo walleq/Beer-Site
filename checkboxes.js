@@ -1,5 +1,6 @@
 let selectedCheckBox = new Map();
 const checkBoxCall = document.getElementById('checkbox');
+let mapBasket = new Set();
 
 function createCheckBox(idBeer) {
     const checkBox = document.createElement('input');
@@ -14,14 +15,22 @@ table.addEventListener('change', function (event) {
     const beer = beers.find(function (beer) {
         return beer.id === parseInt(idBeer, 10);
     });
-console.log(selectedCheckBox);
     currentCheckBox.checked ? selectedCheckBox.set(idBeer, beer) : selectedCheckBox.delete(idBeer);
+     {
+        
+        console.log(val)
+    }
 });
 
+/* for(let entry of selectedCheckBox) {
+    mapBasket.add(entry[1].name);
+    mapBasket.add(entry[1].tagline);
+    mapBasket.add(entry[1].first_brewed);
+
+    console.log(mapBasket)
+ */
 
 
+/* console.log(selectedCheckBox.get('1') ? selectedCheckBox.get('1').name : null); */
 
-
-/* selectedCheckBox.set(event.target.parentNode.parentNode.querySelectorAll('td')[1].innerText, event.target.parentNode.parentNode.querySelectorAll('td')[2].innerText)
-    } else {
-        selectedCheckBox.delete(event.target.parentNode.parentNode.querySelectorAll('td')[1].innerText) */
+/* преобразовать мой мэп, чтобы оставить нужные данные */

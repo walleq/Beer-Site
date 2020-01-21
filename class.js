@@ -9,7 +9,13 @@ class Beer {
     }
 };
 
-
+class BeerBasket {
+  constructor({ name, tagline, first_brewed}) {
+      this.name = name;
+      this.tagline = tagline;
+      this.first_brewed = first_brewed;
+  }
+};
 /* class HttpModule {
     constructor(baseURL)
     async parseBeer() {
