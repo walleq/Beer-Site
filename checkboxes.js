@@ -14,7 +14,7 @@ table.addEventListener('change', function (event) {
     const beer = beers.find(function (beer) {
         return beer.id === parseInt(idBeer, 10);
     });
-
+console.log(selectedCheckBox);
     currentCheckBox.checked ? selectedCheckBox.set(idBeer, beer) : selectedCheckBox.delete(idBeer);
 });
 
