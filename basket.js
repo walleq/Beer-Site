@@ -19,13 +19,14 @@ function createList() {
             const firstBrewedValue = document.createElement('span');
             firstBrewedValue.classList.add('textStyle');
             const image = document.createElement('img');
+            image.classList.add('imageStyle');
             name.innerHTML = ' Name: ';
             tagline.innerHTML = ' Tagline: ';
             firstBrewed.innerHTML = ' First brewed: ';
             nameValue.innerText = item.name;
             taglineValue.innerText = item.tagline;
             firstBrewedValue.innerText = item.first_brewed;
-            image.innterHTML = item.image_url;
+            image.setAttribute('src', item.image_url);
             listItem.appendChild(name);
             listItem.appendChild(nameValue);
             listItem.appendChild(tagline);

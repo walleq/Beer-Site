@@ -30,6 +30,13 @@
   }
   .bordered {
     border:1px solid purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
   }
   .name {
     font-size: large;
@@ -38,9 +45,15 @@
     font-size: large;
     font-weight: 600;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
+    margin-left: 10px;
   }
   .textStyleHead {
     font-size: large;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 10px;
+  }
+  .imageStyle {
+    margin-left: 20px;
+    width: 50px;
+
   }
