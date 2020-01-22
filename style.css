@@ -28,4 +28,12 @@
    font-size: medium;
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
-  
+  .bordered {
+    border:1px solid purple;
+  }
+  .name {
+    font-size: large;
+  }
+  .nameValue {
+    font-size: large;
+  }

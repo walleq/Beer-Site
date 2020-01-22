@@ -1,6 +1,7 @@
-let selectedCheckBox = new Map();
+const selectedCheckBox = new Map();
 const checkBoxCall = document.getElementById('checkbox');
-let mapBasket = new Set();
+let tableForBasket;
+const toCart = document.getElementById('toCart');
 
 function createCheckBox(idBeer) {
     const checkBox = document.createElement('input');
@@ -16,21 +17,21 @@ table.addEventListener('change', function (event) {
         return beer.id === parseInt(idBeer, 10);
     });
     currentCheckBox.checked ? selectedCheckBox.set(idBeer, beer) : selectedCheckBox.delete(idBeer);
-     {
-        
-        console.log(val)
-    }
+    tableForBasket = Array.from(selectedCheckBox.values()).map(({ id, name, tagline, first_brewed, description, image_url }) =>
+        ({ name, tagline, first_brewed, image_url }));
 });
 
-/* for(let entry of selectedCheckBox) {
-    mapBasket.add(entry[1].name);
-    mapBasket.add(entry[1].tagline);
-    mapBasket.add(entry[1].first_brewed);
+toCart.addEventListener('click', function () {
+    localStorage.removeItem('tableForBasket');
+    if (tableForBasket && tableForBasket.length) {
+        localStorage.setItem('tableForBasket', JSON.stringify(tableForBasket))
+    };
+    window.location.href = 'basketTable.html';
 
-    console.log(mapBasket)
- */
+})
+
 
 
 /* console.log(selectedCheckBox.get('1') ? selectedCheckBox.get('1').name : null); */
 
-/* преобразовать мой мэп, чтобы оставить нужные данные */
+/* преобразовать мой мэп, чтобы оставить нужные данные  */
