@@ -34,6 +34,13 @@
   .name {
     font-size: large;
   }
-  .nameValue {
+  .textStyle {
     font-size: large;
+    font-weight: 600;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+  }
+  .textStyleHead {
+    font-size: large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
