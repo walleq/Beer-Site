@@ -1,53 +1,59 @@
+function createDiv() {
+    return document.createElement('div');
+};
+
+function createSpan() {
+    return document.createElement('span');
+};
+
 function createList() {
     if (localStorage.getItem('tableForBasket')) {
         const generateBasketTable = JSON.parse(localStorage.getItem('tableForBasket'));
-        console.log(generateBasketTable);
-        const list = document.createElement('div');
+        const list = document.getElementById('elem');
         generateBasketTable.forEach(item => {
-            const listItem = document.createElement('div');
-            listItem.classList.add('bordered');
-            const name = document.createElement('span');
-            name.classList.add('textStyleHead');
-            const nameValue = document.createElement('span');
-            nameValue.classList.add('textStyle');
-            const tagline = document.createElement('span');
-            tagline.classList.add('textStyleHead');
-            const taglineValue = document.createElement('span');
-            taglineValue.classList.add('textStyle');
-            const firstBrewed = document.createElement('span');
-            firstBrewed.classList.add('textStyleHead');
-            const firstBrewedValue = document.createElement('span');
-            firstBrewedValue.classList.add('textStyle');
+            const listItem = createDiv();
+            const descriptionContainer = createDiv();
+            const name = createSpan();
+            const nameValue = createSpan();
+            const tagline = createSpan();
+            const taglineValue = createSpan();
+            const firstBrewed = createSpan();
+            const firstBrewedValue = createSpan();
             const image = document.createElement('img');
+            const removeButton = createDiv();
+            const nameContainer = createDiv();
+            const taglineContainer = createDiv();
+            const firstBrewedContainer = createDiv();
+
+            removeButton.innerHTML = '<i class="fas fa-trash-alt"></i>'
+
+            descriptionContainer.classList.add('description-container');
+            listItem.classList.add('bordered');
             image.classList.add('imageStyle');
-            name.innerHTML = ' Name: ';
-            tagline.innerHTML = ' Tagline: ';
-            firstBrewed.innerHTML = ' First brewed: ';
+            listItem.classList.add('cart-item');
+            removeButton.classList.add('remove-button');
+
             nameValue.innerText = item.name;
             taglineValue.innerText = item.tagline;
-            firstBrewedValue.innerText = item.first_brewed;
             image.setAttribute('src', item.image_url);
-            listItem.appendChild(name);
-            listItem.appendChild(nameValue);
-            listItem.appendChild(tagline);
-            listItem.appendChild(taglineValue);
-            listItem.appendChild(firstBrewed);
-            listItem.appendChild(firstBrewedValue);
+
+            firstBrewedContainer.innerHTML = `<div> <span class="textStyleHead"> First brewed: </span> <span class="textStyle"> ${item.first_brewed}</span> </div>`;
+            nameContainer.innerHTML = `<div> <span class="textStyleHead"> Name: </span> <span class="textStyle"> ${item.name}</span> <div>`;
+            taglineContainer.innerHTML = `<div> <span class="textStyleHead"> Tagline: </span> <span class="textStyle"> ${item.tagline}</span> <div>`;
+            descriptionContainer.appendChild(nameContainer);
+            descriptionContainer.appendChild(taglineContainer);
+            descriptionContainer.appendChild(firstBrewedContainer);
+            listItem.appendChild(descriptionContainer);
             listItem.appendChild(image);
+            listItem.appendChild(removeButton);
             list.appendChild(listItem);
         });
-        document.getElementById('elem').appendChild(list);
     }
 }
 createList();
 
+/* const elem = document.getElementBy("myDiv");
+elem.parentNode.removeChild(elem); */
 
 
-
-
-/* если есть элемент в локал сторадже, то дотсать его и распарсить через json parse,
-пройти циклом по массиву и постоить дом */
-
-/*
-НА другой странице нужно выводить выбранные товары, для этого нужно создать мап из уже выбранных
-Если удалить с корзины, то галочка на чекбоксе должна слететь. */
+/* Если удалить с корзины, то галочка на чекбоксе должна слететь.  */
