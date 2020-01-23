@@ -13,8 +13,8 @@
 }
 
 .btn-group button:hover {
-  background-color: #255227;
   width: 70px;
+  color: black;
 }
 
 .beer {
