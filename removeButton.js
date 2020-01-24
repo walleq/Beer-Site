@@ -7,14 +7,14 @@ removeButton.addEventListener('click', function (event) {
     let cartId = document.getElementsByClassName("cart-item");
     let arrayId = Array.from(cartId);
     arrayId.forEach(item => {
-        if(item.id === target.id) {
+        if (item.id === target.id) {
             item.parentNode.removeChild(item);
             const localStorageData = JSON.parse(localStorageDataJSON);
-            let a = localStorageData.filter(item => item.id != target.id);
-            console.log(a);
+            const updatedData = localStorageData.filter((item, index) => index !== target.id);
+            console.log(updatedData);
         }
     })
-    
+
 });
 
 
