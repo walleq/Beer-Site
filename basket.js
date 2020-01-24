@@ -25,9 +25,9 @@ function createList() {
             const taglineContainer = createDiv();
             const firstBrewedContainer = createDiv();
 
-            listItem.id = index;
+            listItem.id = item.id;
 
-            removeButton.innerHTML = `<i class="fas fa-trash-alt remove-icon" id=${index}></i>`
+            removeButton.innerHTML = `<i class="fas fa-trash-alt remove-icon" parentId=${item.id}></i>`
 
             descriptionContainer.classList.add('description-container');
             listItem.classList.add('bordered');

@@ -1,12 +1,20 @@
-const selectedCheckBox = new Map();
+let selectedCheckBox = new Map();
 const checkBoxCall = document.getElementById('checkbox');
 let tableForBasket;
 const toCart = document.getElementById('toCart');
+const localStorageDataJSON = localStorage.getItem('tableForBasket');
+let localStorageMap;
+
+if (localStorageDataJSON) {
+    const localStorageData = JSON.parse(localStorageDataJSON);
+    selectedCheckBox = new Map(localStorageData.map(item => [item.id, item]));
+};
 
 function createCheckBox(idBeer) {
     const checkBox = document.createElement('input');
     checkBox.setAttribute('type', 'checkbox');
     checkBox.setAttribute('idBeer', idBeer);
+    checkBox.checked = !!selectedCheckBox.get(idBeer);
     return checkBox;
 }
 
@@ -17,8 +25,7 @@ table.addEventListener('change', function (event) {
         return beer.id === parseInt(idBeer, 10);
     });
     currentCheckBox.checked ? selectedCheckBox.set(idBeer, beer) : selectedCheckBox.delete(idBeer);
-    tableForBasket = Array.from(selectedCheckBox.values()).map(({ id, name, tagline, first_brewed, description, image_url }) =>
-        ({ name, tagline, first_brewed, image_url }));
+    tableForBasket = Array.from(selectedCheckBox.values());
 });
 
 toCart.addEventListener('click', function () {
@@ -27,8 +34,9 @@ toCart.addEventListener('click', function () {
         localStorage.setItem('tableForBasket', JSON.stringify(tableForBasket))
     };
     window.location.href = 'basketTable.html';
-
 })
+
+
 
 
 
