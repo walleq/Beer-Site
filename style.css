@@ -69,3 +69,9 @@ td {
   height: 100%;
   margin-right: 10px;
 }
+.remove-icon {
+  cursor: pointer;
+}
+.remove-icon:hover {
+  color: grey;
+}

@@ -10,7 +10,7 @@ function createList() {
     if (localStorage.getItem('tableForBasket')) {
         const generateBasketTable = JSON.parse(localStorage.getItem('tableForBasket'));
         const list = document.getElementById('elem');
-        generateBasketTable.forEach(item => {
+        generateBasketTable.forEach((item, index) => {
             const listItem = createDiv();
             const descriptionContainer = createDiv();
             const name = createSpan();
@@ -25,7 +25,9 @@ function createList() {
             const taglineContainer = createDiv();
             const firstBrewedContainer = createDiv();
 
-            removeButton.innerHTML = '<i class="fas fa-trash-alt"></i>'
+            listItem.id = index;
+
+            removeButton.innerHTML = `<i class="fas fa-trash-alt remove-icon" id=${index}></i>`
 
             descriptionContainer.classList.add('description-container');
             listItem.classList.add('bordered');
@@ -52,8 +54,7 @@ function createList() {
 }
 createList();
 
-/* const elem = document.getElementBy("myDiv");
-elem.parentNode.removeChild(elem); */
+
 
 
 /* Если удалить с корзины, то галочка на чекбоксе должна слететь.  */
