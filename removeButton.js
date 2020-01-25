@@ -12,17 +12,7 @@ if (localStorageDataJSON) {
         localStorageMap.delete(parseInt(parentId, 10));
         const selectedBeers = Array.from(localStorageMap.values());
         localStorage.setItem('tableForBasket', JSON.stringify(selectedBeers));
-
-        /* arrayId.forEach(item => {
-            if (item.id === target.id) {
-                item.parentNode.removeChild(item);
-                const updatedData = localStorageData.filter((item, index) => index !== target.id);
-                console.log(updatedData);
-            }
-        }) */
-
     });
 };
 
-/* по клику удалять из локал стораджа */
 

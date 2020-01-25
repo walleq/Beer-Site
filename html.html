@@ -4,14 +4,39 @@
 <head>
   <meta charset='utf-8'>
   <title>Beer Catalog</title>
+  <link rel="stylesheet" href="popupstyle.css">
   <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-  <form>
-    <input id='toCart' type="button" value="Корзина">
-  </form>
+  <button class="trigger">
+    <h3>Регистрация</h3>
+  </button>
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h1>Регистрация</h1>
+      <form name='registration' onsubmit="return formValidation();">
+        <ul>
+          <li><label for="family">Фамилия:</label></li>
+          <li><input type="lastname" name="lastName" size="20" /></li>
+          <li><label for="name">Имя:</label></li>
+          <li><input type="name" name="name" size="20" /></li>
+          <li><label for="username">Отчество:</label></li>
+          <li><input type="text" name="otchestvo" size="20" /></li>
+          <li><label for="address">Дата рождения:</label></li>
+          <li><input type="dr" name="address" size="20" /></li>
+          <li><label for="passid">Пароль:</label></li>
+          <li><input type="password" name="passid" size="20" /></li>
+          <li><label for="email">Email:</label></li>
+          <li><input id='form_id' type="text" name="email" size="20" /></li>
+        </ul>
+        <input type="submit" value="Отправить">
+      </form>
+    </div>
+  </div>
+  <input id='toCart' type="button" value="Корзина">
   <table>
   </table>
   <div id="button-wrapper" class="btn-group">
@@ -25,6 +50,8 @@
   <script src='class.js'></script>
   <script src='checkboxes.js'></script>
   <script src='drawTable.js'></script>
+  <script src='popUp.js'></script>
+
 </body>
 
 </html>
