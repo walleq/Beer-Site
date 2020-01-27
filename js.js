@@ -1,6 +1,4 @@
- 
- 
- let table = document.querySelector('table');
+let table = document.querySelector('table');
 const baseURL = 'https://api.punkapi.com/v2/beers'
 let beer = [];
 const columnNames = ['id', 'name', 'tagline', 'first brewed', 'description'];
