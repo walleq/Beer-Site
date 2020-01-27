@@ -17,20 +17,20 @@
     <div class="modal-content">
       <span class="close-button">&times;</span>
       <h1>Регистрация</h1>
-      <form name='registration' onsubmit="return formValidation();">
+      <form name='registration' onsubmit="return valid(this);">
         <ul>
           <li><label for="family">Фамилия:</label></li>
-          <li><input type="lastname" name="lastName" size="20" /></li>
+          <li><input valid name="lastName" size="20" /></li>
           <li><label for="name">Имя:</label></li>
-          <li><input type="name" name="name" size="20" /></li>
+          <li><input valid name="name" size="20" /></li>
           <li><label for="username">Отчество:</label></li>
-          <li><input type="text" name="otchestvo" size="20" /></li>
+          <li><input valid name="otchestvo" size="20" /></li>
           <li><label for="address">Дата рождения:</label></li>
-          <li><input type="dr" name="address" size="20" /></li>
+          <li><input valid name="address" size="20" /></li>
           <li><label for="passid">Пароль:</label></li>
-          <li><input type="password" name="passid" size="20" /></li>
+          <li><input valid name="passid" size="20" id='passwordId' /></li>
           <li><label for="email">Email:</label></li>
-          <li><input id='form_id' type="text" name="email" size="20" /></li>
+          <li><input valid type="text" name="email" size="20" /></li>
         </ul>
         <input type="submit" value="Отправить">
       </form>
