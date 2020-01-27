@@ -43,24 +43,27 @@ function valid(form) {
     const uAdd = document.registration.address.value;
     const uPassid = document.registration.passid;
     const uEmail = document.registration.email.value;
-    let fail = false;
+    let isValid = true;
 
     if (uLastName === '' || uLastName === ' ') {
-        lastName_validation(lastName, spanLastname, 'Введите вашу фамилию');
+        isValid = validation(lastName, spanLastname, 'Введите вашу фамилию');
     } if (uName === "" || uName === ' ') {
-        lastName_validation(name, spanName, 'Введите ваше имя');
+        isValid = validation(name, spanName, 'Введите ваше имя');
     }
     if (uOtchestvo === "" || uOtchestvo === ' ') {
-        lastName_validation(otchestvo, spanOtchestvo, 'Введите ваше отчество');
+        isValid = validation(otchestvo, spanOtchestvo, 'Введите ваше отчество');
     }
     if (uAdd === "" || uAdd === ' ') {
-        lastName_validation(address, spanAddress, 'Введите вашу дату рождения');
+        isValid = validation(address, spanAddress, 'Введите вашу дату рождения');
     }
     if (!uPassid_validation(uPassid, 6, 30)) {
-        lastName_validation(passwordId, spanPasswordId, 'Пароль должен содержать от 6 до 30 символов');
+        isValid = validation(passwordId, spanPasswordId, 'Пароль должен содержать от 6 до 30 символов');
     }
     if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(uEmail)) {
-        lastName_validation(email, spanEmail, 'Вы неправильно ввели ваш email');
+        isValid = validation(email, spanEmail, 'Вы неправильно ввели ваш email');
+    }
+    if(isValid) {
+        toggleModal();
     }
     return false;
 };
@@ -73,9 +76,9 @@ function uPassid_validation(uPassid, mx, my) {
     }
     return true;
 };
-function lastName_validation(document, span, text) {
+function validation(document, span, text) {
     span.innerText = text; /* с- текст, б - спанластнейм, а - документ бай ид */
     span.style.color = 'red';
     document.parentNode.insertBefore(span, document.nextSibling);
+    return false;
 };
-closeBut.addEventListener('click', toggleModal);
