@@ -18,7 +18,6 @@ async function getBeer(params) {
         beers = data.map(beerData => new Beer(beerData));
         generateTableHead(table, columnNames);
         generateTable(table, beers);
-
     } catch (e) {
         console.error(e)
     }

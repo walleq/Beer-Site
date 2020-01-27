@@ -17,27 +17,33 @@
     <div class="modal-content">
       <span class="close-button">&times;</span>
       <h1>Регистрация</h1>
-      <form name='registration' onsubmit="return valid(this);">
+      <form name='registration' onsubmit="return valid(this)">
         <ul>
           <li><label for="family">Фамилия:</label></li>
-          <li><input valid name="lastName" size="20" /></li>
+          <li><input valid name="lastName" size="20" id="lastName" /></li>
           <li><label for="name">Имя:</label></li>
-          <li><input valid name="name" size="20" /></li>
+          <li><input valid name="name" size="20" id="name" /></li>
           <li><label for="username">Отчество:</label></li>
-          <li><input valid name="otchestvo" size="20" /></li>
+          <li><input valid name="otchestvo" size="20" id="otchestvo" /></li>
           <li><label for="address">Дата рождения:</label></li>
-          <li><input valid name="address" size="20" /></li>
+          <li><input valid name="address" size="20" id="address" /></li>
           <li><label for="passid">Пароль:</label></li>
-          <li><input valid name="passid" size="20" id='passwordId' /></li>
+          <li><input valid name="passid" size="20" id="passwordId" /></li>
           <li><label for="email">Email:</label></li>
-          <li><input valid type="text" name="email" size="20" /></li>
+          <li><input valid name="email" size="20" id="email" /></li>
         </ul>
-        <input type="submit" value="Отправить">
+        <input type="submit" value="Отправить" id="closebut">
       </form>
     </div>
   </div>
+  
   <input id='toCart' type="button" value="Корзина">
-  <table>
+  <table><input oninput="updateResult(this.value)" type="search" placeholder="search..." />
+    <ul id="result-list">
+        <li>sample result</li>
+        <li>sample result</li>
+        <li>sample result</li>
+    </ul>
   </table>
   <div id="button-wrapper" class="btn-group">
     <button type="button">1</button>
@@ -51,7 +57,7 @@
   <script src='checkboxes.js'></script>
   <script src='drawTable.js'></script>
   <script src='popUp.js'></script>
-
+  <script src='search.js'></script>
 </body>
 
 </html>
