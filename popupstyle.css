@@ -9,6 +9,7 @@
     visibility: hidden;
     transform: scale(1.1);
     transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    
 }
 
 .modal-content {
@@ -116,4 +117,31 @@ input[valid] {
     box-shadow: 0 0 20px rgba(0, 0, 0, .1);
     transition: .5s;
     font-size: 8px;
+}
+.trigger:hover {
+    background-image: linear-gradient(to right, rgb(8, 255, 214) 0%, rgb(10, 1, 66) 51%, rgb(60, 248, 217) 100%);
+    color: rgb(0, 0, 0);
+}
+#toCart {
+    position:absolute;
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    color: white;
+    padding: 8px 25px;
+    margin: 5px 10px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+    font-size: 8px;
+    right: 10px;
+}
+#toCart:hover {
+    background-image: linear-gradient(to right, rgb(12, 85, 73) 0%, rgb(7, 0, 54) 51%, rgb(19, 104, 90) 100%);
+    color: black;
 }
