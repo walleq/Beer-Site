@@ -47,22 +47,41 @@ function valid(form) {
 
     if (uLastName === '' || uLastName === ' ') {
         isValid = validation(lastName, spanLastname, 'Введите вашу фамилию');
-    } if (uName === "" || uName === ' ') {
+    }
+    else {
+        spanLastname.remove();
+    }
+    if (uName === "" || uName === ' ') {
         isValid = validation(name, spanName, 'Введите ваше имя');
+    }
+    else {
+        spanName.remove();
     }
     if (uOtchestvo === "" || uOtchestvo === ' ') {
         isValid = validation(otchestvo, spanOtchestvo, 'Введите ваше отчество');
     }
+    else {
+        spanOtchestvo.remove();
+    }
     if (uAdd === "" || uAdd === ' ') {
         isValid = validation(address, spanAddress, 'Введите вашу дату рождения');
+    }
+    else {
+        spanAddress.remove();
     }
     if (!uPassid_validation(uPassid, 6, 30)) {
         isValid = validation(passwordId, spanPasswordId, 'Пароль должен содержать от 6 до 30 символов');
     }
+    else {
+        spanPasswordId.remove();
+    }
     if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(uEmail)) {
         isValid = validation(email, spanEmail, 'Вы неправильно ввели ваш email');
     }
-    if(isValid) {
+    else {
+        spanEmail.remove();
+    }
+    if (isValid) {
         toggleModal();
     }
     return false;
@@ -77,8 +96,8 @@ function uPassid_validation(uPassid, mx, my) {
     return true;
 };
 function validation(document, span, text) {
-    span.innerText = text; /* с- текст, б - спанластнейм, а - документ бай ид */
-    span.style.color = 'red';
+    span.innerText = text;
     document.parentNode.insertBefore(span, document.nextSibling);
+    span.classList.add('mistakes');
     return false;
 };

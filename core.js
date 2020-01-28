@@ -6,15 +6,14 @@ const buttonWrapper = document.getElementById('button-wrapper');
 const buttonSingle = document.getElementsByClassName('btn');
 let currentButton;
 
-async function getBeer(params) {
+async function getBeer(params = {}) {
     try {
-        const url = new URL(baseURL)
-        const queryParams = { page: params.page, per_page: 5 }
-
+        const queryParams = { per_page: 5, ...params };
+        const url = new URL(baseURL);
         url.search = new URLSearchParams(queryParams).toString();
+        const responce = await fetch(url);
+        const data = await responce.json();
 
-        const responce = await fetch(url)
-        const data = await responce.json()
         beers = data.map(beerData => new Beer(beerData));
         generateTableHead(table, columnNames);
         generateTable(table, beers);
