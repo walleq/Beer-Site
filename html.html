@@ -6,7 +6,7 @@
   <title>Beer Catalog</title>
   <link rel="stylesheet" href="popupstyle.css">
   <link rel="stylesheet" href="style.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -20,23 +20,23 @@
       <form id='registrationForm' name='registration' onsubmit="return valid(this)">
         <ul>
           <li><label for="family">Фамилия:</label></li>
-          <li><input valid name="lastName" size="20" id="lastName" /></li>
+          <li><input valid name="lastName" size="20" id="lastName" placeholder="Введите вашу фамилию" /></li>
           <li><label for="name">Имя:</label></li>
-          <li><input valid name="name" size="20" id="name" /></li>
+          <li><input valid name="name" size="20" id="name" placeholder="Введите ваше имя" /></li>
           <li><label for="username">Отчество:</label></li>
-          <li><input valid name="otchestvo" size="20" id="otchestvo" /></li>
+          <li><input valid name="otchestvo" size="20" id="otchestvo" placeholder="Введите ваше отчество" /></li>
           <li><label for="address">Дата рождения:</label></li>
-          <li><input valid name="address" size="20" id="address" /></li>
+          <li><input valid name="address" size="20" id="address" placeholder="Ва дату рождения" /></li>
           <li><label for="passid">Пароль:</label></li>
-          <li><input valid name="passid" size="20" id="passwordId" /></li>
+          <li><input valid name="passid" size="20" id="passwordId" placeholder="Ваш пароль" /></li>
           <li><label for="email">Email:</label></li>
-          <li><input valid name="email" size="20" id="email" /></li>
+          <li><input valid name="email" size="20" id="email" placeholder="Email" /></li>
         </ul>
         <input type="submit" value="Отправить" id="closebut">
       </form>
     </div>
   </div>
-  <input id='searchInput' />
+  <input id='searchInput' type="text" placeholder="Искать здесь...">
   <input id='toCart' type="button" value="Корзина">
   <table>
   </table>

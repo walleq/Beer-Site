@@ -123,7 +123,7 @@ input[valid] {
     color: rgb(0, 0, 0);
 }
 #toCart {
-    position:absolute;
+    float: right;
     text-decoration: none;
     outline: none;
     display: inline-block;
@@ -139,7 +139,6 @@ input[valid] {
     box-shadow: 0 0 20px rgba(0, 0, 0, .1);
     transition: .5s;
     font-size: 8px;
-    right: 10px;
 }
 #toCart:hover {
     background-image: linear-gradient(to right, rgb(12, 85, 73) 0%, rgb(7, 0, 54) 51%, rgb(19, 104, 90) 100%);

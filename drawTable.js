@@ -5,6 +5,7 @@ function generateTableHead(table, data) {
     for (let key of data) {
         const th = document.createElement('th');
         const text = document.createTextNode(key);
+        th.setAttribute('id', 'textId');
         th.appendChild(text);
         row.appendChild(th);
     }

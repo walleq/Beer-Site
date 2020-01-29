@@ -1,8 +1,4 @@
-body {
-  background: url(kek.jpg);
-  
-  background-size: 100%
-}
+
 .btn-group button {
   background-color: #4CAF50;
   border: 1px solid green;
@@ -23,7 +19,10 @@ body {
 }
 
 .beer {
-  width: 50px;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+
 }
 
 th {
@@ -37,7 +36,6 @@ td {
 }
 
 .bordered {
-  border: 1px solid purple;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,23 +50,26 @@ td {
 .name {
   font-size: large;
 }
-
-.textStyle {
-  font-size: large;
-  font-weight: 600;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  margin-left: 10px;
+.textStyleHead{
+  font-size: 30px;
+  margin-left: 5px;
 }
 
-.textStyleHead {
-  font-size: large;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  margin-left: 10px;
+.textStyle {
+  font-size: 20px;
+  font-weight: 700;
+    line-height: 1.42859;
+    font-weight: 400;
+    letter-spacing: -.016em;
+    font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    margin-left: 30px;
 }
 
 .imageStyle {
   margin-left: 20px;
   width: 50px;
+  position: absolute;
+  right: 370px;
 }
 .remove-button {
   height: 100%;
@@ -79,4 +80,56 @@ td {
 }
 .remove-icon:hover {
   color: grey;
+}
+#textId {
+  font-size: 25px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: 0em;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+#searchInput {
+  background: #A3D0C3;
+
+}
+.backButton {
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    color: white;
+    padding: 8px 25px;
+    margin: 5px 10px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+    font-size: 8px;
+    
+}
+.backButton:hover {
+  background-image: linear-gradient(to right, rgb(12, 85, 73) 0%, rgb(36, 5, 238) 51%, rgb(19, 104, 90) 100%);
+  color: black;
+}
+@media (max-width:1215px) {
+}
+@media (max-width:800px) {
+.trigger {
+font-size: 6px;
+}
+#searchInput {
+  font-size: 10px;
+}
+#toCart {
+  font-size: 5px;
+}
+#textId {
+  font-size: 15px;
+}
+td {
+  font-size: x-small;
+}
 }
